@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Portafolio de proyectos de software: herramientas para animación 2D, inspección de AssetBundles, administración de red y automatización de teclado."
+    >
+    <meta name="theme-color" content="#f5f6f2">
+    <title>Portafolio | Proyectos de software</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <header class="site-header">
+      <a class="wordmark" href="#inicio" aria-label="Portafolio, inicio">
+        <span class="wordmark-mark" aria-hidden="true">P</span>
+        <span>PORTAFOLIO<span class="wordmark-dot">.</span></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="sr-only">Abrir menú</span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Navegación principal">
+        <a href="#proyectos">Proyectos <span>04</span></a>
+        <a href="#enfoque">Enfoque</a>
+      </nav>
+    </header>
+
+    <main id="contenido">
+      <section class="hero section-shell" id="inicio">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="status-dot"></span> PORTAFOLIO DE SOFTWARE</p>
+          <h1>Herramientas útiles.<br><span>Problemas reales.</span></h1>
+          <p class="hero-intro">
+            Una selección de proyectos de escritorio enfocados en simplificar
+            tareas de visualización, análisis y automatización.
+          </p>
+          <a class="button button-dark" href="#proyectos">
+            Explorar proyectos <span aria-hidden="true">↓</span>
+          </a>
+          <p class="hero-note">4 proyectos · Evidencia visual incluida</p>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="hero-art-ring"></div>
+          <div class="hero-art-card hero-art-card-main">
+            <span class="art-label">PROYECTOS</span>
+            <strong>04</strong>
+            <span class="art-rule"></span>
+            <span class="art-caption">Ideas convertidas<br>en herramientas</span>
+          </div>
+          <div class="hero-art-card hero-art-card-side">
+            <span class="art-mini-icon">↗</span>
+            <span>DISEÑO<br>FUNCIONAL</span>
+          </div>
+          <span class="hero-art-index">01 — 04</span>
+        </div>
+        <a class="scroll-cue" href="#proyectos"><span></span> DESLIZA PARA EXPLORAR</a>
+      </section>
+
+      <section class="projects section-shell" id="proyectos">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">TRABAJO SELECCIONADO <span> / SOFTWARE</span></p>
+            <h2>Proyectos<span class="accent-dot">.</span></h2>
+          </div>
+          <p class="section-intro">
+            Cada proyecto nace de una necesidad concreta y busca resolverla con
+            una experiencia clara y directa.
+          </p>
+        </div>
+
+        <article class="project-card project-feature">
+          <div class="project-copy">
+            <div class="project-meta"><span>01</span><span>VISUALIZACIÓN 2D</span></div>
+            <h3>Visor de animación<br>por esqueletos</h3>
+            <p class="project-summary">
+              Interpreta esqueletos binarios Spine (.skel) y atlas multipágina,
+              enlazando slots y attachments con regiones y texturas. Calcula
+              transformaciones jerárquicas de huesos, deformación de mallas
+              ponderadas, clipping y orden de dibujo para renderizar el
+              personaje. La interfaz permite recorrer animaciones y capas;
+              también exporta una imagen compuesta con metadatos para devolver
+              cambios al atlas, en un flujo de edición limitado a una página.
+              Implementa un subconjunto propio, no el runtime oficial.
+            </p>
+            <details class="project-expanded">
+              <summary>Descripción técnica ampliada</summary>
+              <div class="expanded-content">
+                <p>
+                  La aplicación implementa lectura binaria de skeleton y atlas,
+                  resuelve la relación entre huesos, slots, attachments y
+                  texturas, y compone la pose en una vista propia. Incluye
+                  reproducción de un subconjunto de timelines, transformaciones,
+                  deformación de mallas y orden de dibujo. Puede exportar una
+                  imagen compuesta con metadatos para un flujo acotado de edición.
+                </p>
+                <p><strong>Funciones:</strong> lectura de .skel/.atlas, vista y recorrido de animaciones, composición y exportación con sidecar.</p>
+                <p><strong>Alcance:</strong> es un visor propio para un subconjunto del formato, no reemplaza el runtime oficial de Spine.</p>
+              </div>
+            </details>
+            <div class="project-detail">
+              <span class="detail-label">PROBLEMA</span>
+              <p>Relacionar .skel, atlas y texturas manualmente dificulta verificar una pose coherente.</p>
+            </div>
+            <div class="project-detail">
+              <span class="detail-label">SOLUCIÓN</span>
+              <p>Compone las piezas animadas y permite recorrerlas, ocultar capas y exportar una imagen con su sidecar.</p>
+            </div>
+            <div class="project-detail project-strength">
+              <span class="detail-label">FORTALEZA TÉCNICA</span>
+              <p>Parser binario, solver de pose, skinning y compositor propios; PySide6 aporta la interfaz y la pintura Qt.</p>
+            </div>
+            <div class="tag-list" aria-label="Tecnologías">
+              <span>Python</span><span>PySide6</span><span>Spine (.skel/.atlas)</span>
+            </div>
+          </div>
+          <div class="project-media media-dark">
+            <button
+              class="image-open"
+              type="button"
+              data-image="assets/visor-2d.jpg"
+              data-alt="Interfaz del visor 2D con personaje, capas y línea de tiempo de animación"
+              aria-label="Ampliar captura del visor de animación 2D"
+            >
+              <img src="assets/visor-2d.jpg" alt="Visor 2D mostrando un personaje ensamblado, capas y una línea de tiempo">
+              <span class="media-hint">VER CAPTURA <span aria-hidden="true">↗</span></span>
+            </button>
+            <span class="media-index">CAPTURA 01 / 04</span>
+          </div>
+        </article>
+
+        <article class="project-card project-reverse">
+          <div class="project-copy">
+            <div class="project-meta"><span>02</span><span>LECTURA DE ASSETS</span></div>
+            <h3>Explorador de<br>AssetBundles</h3>
+            <p class="project-summary">
+              Abre AssetBundles con UnityPy y presenta un inventario tipado:
+              distingue texturas, TextAsset, videos y objetos genéricos.
+              Permite inspeccionar campos serializados cuando hay type tree,
+              exportar objetos seleccionados en su forma serializada y extraer
+              VideoClip desde su recurso asociado; las texturas se exportan
+              como PNG. También admite reimportar un PNG a una textura y
+              guardar una copia modificada. No reconstruye un proyecto Unity
+              completo ni garantiza compatibilidad universal.
+            </p>
+            <details class="project-expanded">
+              <summary>Descripción técnica ampliada</summary>
+              <div class="expanded-content">
+                <p>
+                  UnityPy aporta la lectura de bundles y objetos serializados;
+                  la aplicación organiza el inventario, las vistas previas y el
+                  inspector en una interfaz PySide6. Los typetrees se muestran
+                  cuando están disponibles. Exporta objetos seleccionados en
+                  datos serializados y obtiene los bytes de VideoClip desde el
+                  recurso externo asociado. El video se copia en su contenedor
+                  original; opcionalmente puede recomprimirse con ffmpeg.
+                  Las texturas se exportan como PNG de intercambio, que puede
+                  reimportarse y guardarse en una copia del bundle.
+                </p>
+                <p><strong>Funciones:</strong> inventario tipado, inspector de campos, vista previa de texturas, exportación de videos y objetos seleccionados, exportación por lotes e importación acotada de texturas.</p>
+                <p><strong>Alcance:</strong> la biblioteca interpreta el bundle; el proyecto no implementa descifrado criptográfico ni reconstruye un proyecto Unity completo. La cobertura depende del paquete y UnityPy.</p>
+              </div>
+            </details>
+            <div class="project-detail">
+              <span class="detail-label">PROBLEMA</span>
+              <p>Inspeccionar objetos serializados y encontrar sus recursos requiere interpretar el contenido del bundle.</p>
+            </div>
+            <div class="project-detail">
+              <span class="detail-label">SOLUCIÓN</span>
+              <p>Reúne inventario, inspector de campos, vistas previas y exportación en una aplicación de escritorio.</p>
+            </div>
+            <div class="project-detail project-strength">
+              <span class="detail-label">FORTALEZA TÉCNICA</span>
+              <p>Distingue bytes originales de PNG de intercambio para texturas y registra la clasificación en un manifiesto.</p>
+            </div>
+            <div class="tag-list" aria-label="Tecnologías">
+              <span>Python</span><span>PySide6</span><span>UnityPy</span><span>Pillow</span>
+            </div>
+          </div>
+          <div class="project-media media-light">
+            <button
+              class="image-open"
+              type="button"
+              data-image="assets/unity-bundle.jpg"
+              data-alt="Interfaz del explorador de AssetBundles con una textura seleccionada y sus propiedades"
+              aria-label="Ampliar captura del explorador de AssetBundles"
+            >
+              <img src="assets/unity-bundle.jpg" alt="Explorador de AssetBundles con vista previa de textura e inspector de propiedades">
+              <span class="media-hint">VER CAPTURA <span aria-hidden="true">↗</span></span>
+            </button>
+            <span class="media-index">CAPTURA 02 / 04</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-copy">
+            <div class="project-meta"><span>03</span><span>ADMINISTRACIÓN DE RED</span></div>
+            <h3>Monitor de dispositivos<br>registrados</h3>
+            <p class="project-summary">
+              Consulta en un router compatible la información de dispositivos
+              registrados en DHCP y presenta nombre, IP, MAC, interfaz
+              inalámbrica y vencimiento de concesión. Tras confirmación permite
+              solicitar una regla de acceso basada en MAC. Las consultas y la
+              gestión se ejecutan sin bloquear la interfaz. No escanea toda la
+              red, captura paquetes ni mantiene un historial de dispositivos.
+            </p>
+            <details class="project-expanded">
+              <summary>Descripción técnica ampliada</summary>
+              <div class="expanded-content">
+                <p>
+                  La aplicación de escritorio consulta la tabla DHCP expuesta
+                  por la interfaz de administración del router y procesa la
+                  respuesta para mostrar los campos disponibles. También lee
+                  las reglas de acceso y, tras confirmación, solicita agregar
+                  una regla por dirección MAC y activar la política
+                  correspondiente. Las operaciones de red se ejecutan en hilos
+                  de trabajo y los resultados se presentan en Tkinter.
+                </p>
+                <p><strong>Funciones:</strong> consulta de concesiones, presentación de datos reportados por el router y solicitud de gestión de acceso por MAC.</p>
+                <p><strong>Alcance:</strong> depende de la interfaz del router configurado; los registros DHCP no equivalen a observar tráfico ni a detectar universalmente todos los equipos.</p>
+              </div>
+            </details>
+            <div class="project-detail">
+              <span class="detail-label">PROBLEMA</span>
+              <p>Consultar los dispositivos registrados y administrar sus reglas de acceso requiere usar el panel del router.</p>
+            </div>
+            <div class="project-detail">
+              <span class="detail-label">SOLUCIÓN</span>
+              <p>Reúne la consulta DHCP y la gestión confirmada de reglas por MAC en una interfaz de escritorio.</p>
+            </div>
+            <div class="project-detail project-strength">
+              <span class="detail-label">FORTALEZA TÉCNICA</span>
+              <p>Integra autenticación, procesamiento de respuestas del router y operaciones de administración en segundo plano con Tkinter.</p>
+            </div>
+            <div class="tag-list" aria-label="Tecnologías">
+              <span>Python</span><span>Tkinter</span><span>Requests</span>
+              <span>cryptography</span><span>keyring (opcional)</span>
+            </div>
+            <p class="privacy-note"><span aria-hidden="true">●</span> Captura protegida: los datos de red se ocultaron.</p>
+          </div>
+          <div class="project-media media-light">
+            <button
+              class="image-open"
+              type="button"
+              data-image="assets/red-privacidad.jpg"
+              data-alt="Captura del monitor de dispositivos con nombres y datos de red ocultos"
+              aria-label="Ampliar captura protegida del monitor de red"
+            >
+              <img src="assets/red-privacidad.jpg" alt="Monitor de red con la lista de dispositivos ocultada por privacidad">
+              <span class="media-hint">VER CAPTURA <span aria-hidden="true">↗</span></span>
+            </button>
+            <span class="media-index">CAPTURA 03 / 04 · DATOS OCULTOS</span>
+          </div>
+        </article>
+
+        <article class="project-card project-reverse project-video-card">
+          <div class="project-copy">
+            <div class="project-meta"><span>04</span><span>AUTOMATIZACIÓN</span></div>
+            <h3>Auto pulsador<br>de teclado</h3>
+            <p class="project-summary">
+              Automatiza pulsaciones de las teclas F y 1 en Windows mediante
+              la API `SendInput` de Win32. Permite ajustar por separado la
+              frecuencia de cada tecla y alternar inicio o pausa desde la
+              ventana o con F9. Un hilo dedicado temporiza los eventos y otro
+              escucha el atajo global; `root.after()` comunica los cambios a
+              Tkinter sin bloquear su ciclo de interfaz.
+            </p>
+            <details class="project-expanded">
+              <summary>Descripción técnica ampliada</summary>
+              <div class="expanded-content">
+                <p>
+                  Usa `SendInput` de Win32 para las teclas configuradas y
+                  registra F9 como hotkey del sistema. Un hilo temporiza las
+                  pulsaciones y comunica el cambio de estado a Tkinter mediante
+                  su planificador.
+                </p>
+                <p><strong>Funciones:</strong> control de frecuencia por tecla, inicio/pausa desde la ventana o F9 y liberación de la tecla al pausar.</p>
+                <p><strong>Alcance:</strong> utilitario de automatización de teclado específico para Windows; la recepción de entrada depende del contexto de la aplicación activa.</p>
+              </div>
+            </details>
+            <div class="project-detail">
+              <span class="detail-label">PROBLEMA</span>
+              <p>Repetir teclas manualmente en tareas compatibles requiere atención continua.</p>
+            </div>
+            <div class="project-detail">
+              <span class="detail-label">SOLUCIÓN</span>
+              <p>Permite ajustar la frecuencia de F y 1 y alternar entre activo y pausa con F9.</p>
+            </div>
+            <div class="project-detail project-strength">
+              <span class="detail-label">FORTALEZA TÉCNICA</span>
+              <p>Preconstruye estructuras INPUT y separa el motor temporizado y el atajo global de la interfaz Tkinter.</p>
+            </div>
+            <div class="tag-list" aria-label="Tecnologías">
+              <span>Python</span><span>Tkinter</span><span>ctypes</span><span>Win32 API</span><span>threading</span>
+            </div>
+          </div>
+          <div class="project-media media-video">
+            <video
+              controls
+              preload="none"
+              playsinline
+              aria-label="Demostración en video del auto pulsador"
+            >
+              <source src="assets/auto-pulsador.mp4" type="video/mp4">
+              Tu navegador no puede reproducir este video.
+            </video>
+            <span class="video-label"><span class="play-dot"></span> DEMOSTRACIÓN · REPRODUCCIÓN MANUAL</span>
+            <span class="media-index">VIDEO 04 / 04</span>
+          </div>
+        </article>
+      </section>
+
+      <section class="closing section-shell" id="enfoque">
+        <p class="eyebrow">MI ENFOQUE</p>
+        <div class="closing-content">
+          <h2>Menos pasos.<br><span>Más claridad.</span></h2>
+          <p>
+            Desarrollo herramientas enfocadas en hacer tareas específicas más
+            comprensibles, accesibles y eficientes.
+          </p>
+        </div>
+        <div class="closing-bottom">
+          <span>PORTAFOLIO DE PROYECTOS</span>
+          <a href="#inicio">VOLVER ARRIBA ↑</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="wordmark" href="#inicio">
+        <span class="wordmark-mark" aria-hidden="true">P</span>
+        <span>PORTAFOLIO<span class="wordmark-dot">.</span></span>
+      </a>
+      <span>Hecho para mostrar el trabajo detrás de cada idea.</span>
+      <span>© <span id="year"></span></span>
+    </footer>
+
+    <dialog class="lightbox" aria-label="Captura de proyecto">
+      <button class="lightbox-close" type="button" aria-label="Cerrar imagen">×</button>
+      <img src="" alt="">
+      <p class="lightbox-caption"></p>
+    </dialog>
+  </body>
+</html>
